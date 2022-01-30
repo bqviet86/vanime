@@ -48,3 +48,24 @@ headerNavClose.onclick = function() {
     headerNav.style.transform = "translateY(-100%)";
     headerNav.style.opacity = 0;
 }
+
+// FOOTER
+let contactWraps = document.querySelectorAll('.footer-contact__wrap');
+
+for(let i = 0; i < contactWraps.length; i++) {
+    let contactWrap = contactWraps[i];
+    contactWrap.addEventListener('click', function() {
+        let contactDesc = document.querySelector(`.footer-contact__wrap:nth-child(${i + 1}) .footer-contact__desc`);
+        let contactIcon = document.querySelector(`.footer-contact__wrap:nth-child(${i + 1}) .footer-contact__title i`);
+
+        let isOpenContactDesc = contactDesc.style.display === 'block';
+        if(!isOpenContactDesc) {
+            contactDesc.style.display = 'block';
+            contactIcon.style.transform = 'rotate(180deg)'
+        }
+        else {
+            contactDesc.style.display = 'none';
+            contactIcon.style.transform = 'rotate(0)'
+        }
+    })
+}

@@ -187,6 +187,11 @@ a {
     }
 }
 
+/* APP */
+.app {
+    position: relative;
+}
+
 /* HEADER */
 .header {
     position: fixed;
@@ -524,7 +529,6 @@ a {
 }
 
 .bar{
-    /* margin: 60px auto auto 20px; */
     margin-top: 60px;
 }
 
@@ -751,4 +755,15 @@ a {
 
 .footer-contact__text:hover {
     opacity: .8;
+}
+
+.top-btn {
+    display: none;
+    position: fixed;
+    inset: auto 16px 20px auto;
+    color: #fff;
+    padding: 16px 20px;
+    font-size: 24px;
+    background-image: var(--primary-color);
+    border-radius: 50%;
 }
