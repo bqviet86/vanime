@@ -50,6 +50,9 @@
     .grid:not(.header .grid) {
         width: 740px;
     }
+    .grid-col-3-43 {
+        margin-left: 0;
+    }
     .grid-col-3-43, 
     .grid-col-8-57 {
         width: 100%;

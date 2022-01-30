@@ -524,7 +524,8 @@ a {
 }
 
 .bar{
-    margin: 60px auto auto 20px;
+    /* margin: 60px auto auto 20px; */
+    margin-top: 60px;
 }
 
 .bar-title {
