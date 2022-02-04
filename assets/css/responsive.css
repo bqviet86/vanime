@@ -120,6 +120,12 @@
         width: 100%;
     }
 
+    /* SLIDE */
+    .navigation-auto, 
+    .navigation-manual {
+        bottom: 24px;
+    }
+
     /* CONTAINER */
     .bar {
         margin-left: 0;
@@ -156,9 +162,16 @@
     }
 
     /* SLIDER */
+    .navigation-auto, 
+    .navigation-manual {
+        bottom: 16px;
+    }
     .manual-btn, 
     .navigation-auto div {
         padding: 4px;
+    }
+    .manual-btn:hover {
+        background-color: unset;
     }
 
     /* CONTAINER */
