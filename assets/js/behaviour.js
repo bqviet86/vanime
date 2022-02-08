@@ -38,6 +38,7 @@ for(let i = 0; i < labels.length; i++) {
 let menuNavBTN = document.querySelector('.menu-nav');
 let headerNav = document.querySelector('.header-nav');
 let headerNavClose = document.querySelector('.header-nav-close');
+// let categoryWraps = document.querySelectorAll('.category-wrap');
 
 menuNavBTN.onclick = function() {
     headerNav.style.transform = "translateY(0)";
@@ -49,19 +50,46 @@ headerNavClose.onclick = function() {
     headerNav.style.opacity = 0;
 }
 
-// FOOTER
-let contactWraps = document.querySelectorAll('.footer-contact__wrap');
+// OPEN CATEGORY-WRAP
+let navItems = document.querySelectorAll('.nav-item');
 
-for(let i = 0; i < contactWraps.length; i++) {
-    let contactWrap = contactWraps[i];
-    contactWrap.addEventListener('click', function() {
+for(let i = 0; i < navItems.length; i++) {
+    let navItem = navItems[i];
+    navItem.onclick = function() {
+        let categoryWrap = document.querySelector(`.nav-item:nth-child(${i + 1}) .category-wrap`);
+
+        let isOpenCategoryWrap = categoryWrap.style.display === 'flex';
+
+        if(!isOpenCategoryWrap) {
+            categoryWrap.style.display = 'flex';
+            categoryWrap.style.transform = 'scale(1)';
+        }
+        else {
+            categoryWrap.style.display = 'none';
+            categoryWrap.style.transform = 'scale(0)';
+        }
+
+        headerNavClose.onclick = function() {
+            headerNav.style.transform = "translateY(-100%)";
+            headerNav.style.opacity = 0;
+            categoryWrap.style.display = 'none';
+        }
+    }
+}
+
+// FOOTER
+let contactTitles = document.querySelectorAll('.footer-contact__title');
+
+for(let i = 0; i < contactTitles.length; i++) {
+    let contactTitle = contactTitles[i];
+    contactTitle.addEventListener('click', function() {
         let contactDesc = document.querySelector(`.footer-contact__wrap:nth-child(${i + 1}) .footer-contact__desc`);
         let contactIcon = document.querySelector(`.footer-contact__wrap:nth-child(${i + 1}) .footer-contact__title i`);
 
         let isOpenContactDesc = contactDesc.style.display === 'block';
         if(!isOpenContactDesc) {
             contactDesc.style.display = 'block';
-            contactIcon.style.transform = 'rotate(180deg)'
+            contactIcon.style.transform = 'rotate(90deg)'
         }
         else {
             contactDesc.style.display = 'none';

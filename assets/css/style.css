@@ -79,6 +79,10 @@ a {
     margin-right: 8px;
 }
 
+.ml-4 {
+    margin-left: 4px;
+}
+
 .ml-20 {
     margin-left: 20px;
 }
@@ -735,6 +739,8 @@ a {
 .footer-contact__title {
     position: relative;
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .footer-contact__title::after {
@@ -743,6 +749,11 @@ a {
     inset: auto 0 -21px 0;
     height: 2px;
     background-color: #ccc;
+}
+
+.footer-contact__title i {
+    display: none;
+    font-size: 14px;
 }
 
 .footer-contact__desc {
