@@ -104,6 +104,7 @@
         background-color: #888;
     }
     .category-wrap {
+        display: none;
         top: 100%;
         left: 0;
         background-color: var(--text-color);
@@ -118,6 +119,9 @@
     }
     .category-list {
         width: 100%;
+    }
+    .nav-item:hover .category-wrap {
+        transform: scale(0);
     }
 
     /* SLIDE */
@@ -202,6 +206,7 @@
         font-size: 16px;
     }
     .footer-contact__title i {
+        display: block;
         margin-left: 8px;
         transition: all linear .1s;
     }
