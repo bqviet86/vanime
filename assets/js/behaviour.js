@@ -35,10 +35,10 @@ for(let i = 0; i < labels.length; i++) {
 }
 
 // OPEN NAV
+let boDy = document.querySelector('body');
 let menuNavBTN = document.querySelector('.menu-nav');
 let headerNav = document.querySelector('.header-nav');
 let headerNavClose = document.querySelector('.header-nav-close');
-// let categoryWraps = document.querySelectorAll('.category-wrap');
 
 menuNavBTN.onclick = function() {
     headerNav.style.transform = "translateY(0)";
@@ -78,14 +78,12 @@ for(let i = 0; i < navItems.length; i++) {
 }
 
 // FOOTER
-let boDy = document.querySelector('body');
+let contactTitles = document.querySelectorAll('.footer-contact__title');
 
-if(boDy.offsetWidth <= 735) {
-    let contactTitles = document.querySelectorAll('.footer-contact__title');
-    
-    for(let i = 0; i < contactTitles.length; i++) {
-        let contactTitle = contactTitles[i];
-        contactTitle.addEventListener('click', function() {
+for(let i = 0; i < contactTitles.length; i++) {
+    let contactTitle = contactTitles[i];
+    contactTitle.addEventListener('click', function() {
+        if(boDy.offsetWidth <= 735) {
             let contactDesc = document.querySelector(`.footer-contact__wrap:nth-child(${i + 1}) .footer-contact__desc`);
             let contactIcon = document.querySelector(`.footer-contact__wrap:nth-child(${i + 1}) .footer-contact__title i`);
     
@@ -98,6 +96,6 @@ if(boDy.offsetWidth <= 735) {
                 contactDesc.style.display = 'none';
                 contactIcon.style.transform = 'rotate(0)'
             }
-        })
-    }
+        }
+    })
 }
