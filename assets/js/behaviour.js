@@ -72,7 +72,9 @@ for(let i = 0; i < navItems.length; i++) {
         headerNavClose.onclick = function() {
             headerNav.style.transform = "translateY(-100%)";
             headerNav.style.opacity = 0;
-            categoryWrap.style.display = 'none';
+            for(let categoryWrapNth of document.querySelectorAll('.category-wrap')) {
+                categoryWrapNth.style.display = 'none';
+            }
         }
     }
 }
